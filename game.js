@@ -23,7 +23,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let playerChoice = prompt("Please select Rock, Paper, or Scissors: ");
+    let playerChoice = prompt("Please select Rock, Paper, or Scissors | " + `Current score: ${humanScore}-${computerScore}`);
 
     if (playerChoice.toLowerCase() == "rock") {
         return playerChoice;
