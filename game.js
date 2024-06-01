@@ -1,12 +1,12 @@
 function getComputerChoice() {
-    let choice = "yo";
+    let choice = "Default";
 
     let randomNum = Math.random();
     console.log(randomNum);
 
     switch (true) {
         case (randomNum < .33):
-            choice = "Rock";
+            choice = "rock";
             break;
         case (randomNum < 0.66 && randomNum > 0.33):
             choice = "paper";
@@ -20,4 +20,27 @@ function getComputerChoice() {
     return choice;
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice());
+
+
+
+function getHumanChoice(playerChoice) {
+    if (playerChoice.toLowerCase() == "rock") {
+        return playerChoice;
+    }
+    if (playerChoice.toLowerCase() == "paper") {
+        return playerChoice;
+    }
+    if (playerChoice.toLowerCase() == "scissors") {
+        return playerChoice;
+    }
+    else {
+        console.log("Please select a valid option");
+        playerChoice = prompt("Please select Rock, Paper, or Scissors: ");
+        console.log(getHumanChoice(playerChoice));
+    }
+}
+
+let playerChoice = prompt("Please select Rock, Paper, or Scissors: ");
+console.log(getHumanChoice(playerChoice));
+
