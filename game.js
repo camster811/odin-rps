@@ -28,15 +28,15 @@ function getHumanChoice() {
     if (playerChoice.toLowerCase() == "rock") {
         return playerChoice;
     }
-    if (playerChoice.toLowerCase() == "paper") {
+    else if (playerChoice.toLowerCase() == "paper") {
         return playerChoice;
     }
-    if (playerChoice.toLowerCase() == "scissors") {
+    else if (playerChoice.toLowerCase() == "scissors") {
         return playerChoice;
     }
     else {
-        playerChoice = prompt("Please select a valid option");
-        getHumanChoice();
+        alert("Please select a valid option");
+        return getHumanChoice();
     }
 }
 
@@ -52,7 +52,6 @@ function playGame() {
                     ++humanScore;
                 } else {
                     console.log("It's a tie!")
-                    ++ties;
                 }
                 break;
             case "paper":
@@ -64,7 +63,6 @@ function playGame() {
                     ++computerScore;
                 } else {
                     console.log("It's a tie!")
-                    ++ties;
                 }
                 break;
             case "scissors":
@@ -76,7 +74,6 @@ function playGame() {
                     ++humanScore;
                 } else {
                     console.log("It's a tie!")
-                    ++ties;
                 }
                 break;
             default:
