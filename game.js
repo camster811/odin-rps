@@ -35,8 +35,7 @@ function getHumanChoice() {
         return playerChoice;
     }
     else {
-        console.log("Please select a valid option");
-        playerChoice = prompt("Please select Rock, Paper, or Scissors: ");
+        playerChoice = prompt("Please select a valid option");
         getHumanChoice();
     }
 }
@@ -53,6 +52,7 @@ function playGame() {
                     ++humanScore;
                 } else {
                     console.log("It's a tie!")
+                    ++ties;
                 }
                 break;
             case "paper":
@@ -64,6 +64,7 @@ function playGame() {
                     ++computerScore;
                 } else {
                     console.log("It's a tie!")
+                    ++ties;
                 }
                 break;
             case "scissors":
@@ -75,6 +76,7 @@ function playGame() {
                     ++humanScore;
                 } else {
                     console.log("It's a tie!")
+                    ++ties;
                 }
                 break;
             default:
@@ -82,7 +84,7 @@ function playGame() {
         }
     }
 
-    for (let i = 0; i < 5; i++) {
+    while (computerScore + humanScore < 5) {
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
